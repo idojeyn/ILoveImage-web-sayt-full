@@ -1,0 +1,95 @@
+.nav-link{
+  color: #000;
+}
+
+
+.help-content, 
+.language-content {
+  position: absolute;
+  top: 0;
+  right: 218.5px;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: -8px 2px 12px rgba(0,0,0,0.15);
+  z-index: 999;
+  padding: 10px;
+  height: 100%;
+}
+.language-content{
+  width: 500px;
+}
+
+.help-content i{
+  color: #595C5F;
+}
+.help-content a, 
+.language-content li {
+  display: block;
+  padding: 6px 12px;
+  color: #212529;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.help-content a:hover,
+.right a:hover,
+.right p:hover,
+.left .d-flex:hover, 
+.language-content li:hover {
+  background: #f5f5f5;
+  border-radius: 5px;
+}
+
+.language-content ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.blurred {
+  filter: blur(1.5px);
+  transition: 0.3s ease;
+}
+.integration {
+  border: 1px solid #ddd;
+  width: 80%;
+  float: right;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 13px;
+  color: #333;
+  margin-top: 10px;
+}
+
+.hover-dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0; 
+  right: 0;
+  left: auto; 
+}
+.dropdown-menu-end .col{
+  padding: 0 ;
+}
+
+.yellow i {
+  color: #FFD400 ;
+}
+
+.green i {
+  color: #8FBC5D;
+}
+
+.blue i {
+  color: #3CB6E2;
+}
+
+.dark i {
+  color: #4A7AAB;
+}
+
+.feolet i {
+  color: #AB6993;
+}

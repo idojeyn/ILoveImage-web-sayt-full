@@ -1,0 +1,8 @@
+.pattern-bg {
+  min-height: 100vh;
+  background-image: url("/image/background.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;  
+  background-attachment: fixed; 
+}

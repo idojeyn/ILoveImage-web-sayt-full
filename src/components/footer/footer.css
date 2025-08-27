@@ -1,0 +1,37 @@
+.languageContent {
+  position: absolute;
+  bottom: 100%;   /* pastga emas, yuqoriga chiqadi */
+  left: 0;        /* chapga yopishadi */
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: -8px 2px 12px rgba(0,0,0,0.15);
+  z-index: 999;
+  padding: 10px;
+  width: 500px;
+}
+
+.languageContent ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.languageContent{
+  width: 500px;
+}
+
+.languageContent li {
+  display: block;
+  padding: 6px 12px;
+  color: #212529;
+  text-decoration: none;
+  font-size: 14px;
+}
+.languageContent li:hover {
+  background: #f5f5f5;
+  border-radius: 5px;
+}
+

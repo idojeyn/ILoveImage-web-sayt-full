@@ -1,0 +1,68 @@
+.detail-page {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.tool-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.tool-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.upload-box {
+  border: 2px dashed #bbb;
+  border-radius: 12px;
+  padding: 40px;
+  background: #fafafa;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.upload-box:hover {
+  border-color: #007bff;
+  background: #f0f8ff;
+}
+
+.upload-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.preview-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.preview-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.preview-card p {
+  font-size: 0.9rem;
+  padding: 5px;
+  margin: 0;
+  color: #444;
+}
