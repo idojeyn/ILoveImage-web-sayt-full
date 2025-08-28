@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import './toolGrid.css'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 function ToolsGrid() {
 
     const navigate = useNavigate("")
@@ -31,7 +31,7 @@ function ToolsGrid() {
     return (
         <div className="row g-4 mt-4">
             {filteredTools.map((tool) => (
-                <div key={tool.id} className="col-md-3">
+                <Link key={tool.id} to={tool.path} className="col-md-3">
                     <div className="card shadow-sm h-100 p-3 clickable-card"
                         onClick={() => navigate(tool.path)}
                     >
@@ -41,7 +41,7 @@ function ToolsGrid() {
                         <h5 className="fw-bold">{tool.title}</h5>
                         <p className="text-muted desciption">{tool.desc}</p>
                     </div>
-                </div>
+                </Link>
             ))}
         </div>
     );

@@ -149,26 +149,26 @@ const Navbar = () => {
                     <img src="https://play-lh.googleusercontent.com/ORe-eRjZn-TA4nWnM8Sb7B-ykQQhDfoNhbpzPSOSNOFnhI2H6i071eBI2myRFJl5AV0" width="32" className="me-2" />
                     <div><strong>iLovePDF</strong><br /><small>Simplify document management</small></div>
                   </div>
-                  <div class="integration">
+                  <div className="integration">
                     <strong>Integrations</strong><br />
                     Zapier, Make, Wordpress...
                   </div>
                 </div>
                 {/* Right */}
                 <div className="col-4 border-start right" onMouseLeave={() => { setOpenHelp(false); setOpenLang(false) }}>
-                  <a href="#" className="d-block py-2"><i class="far fa-credit-card"></i> Pricing</a>
-                  <a href="#" className="d-block py-2"><i class="fas fa-user-shield"></i> Security</a>
-                  <a href="#" className="d-block py-2"><i class="fas fa-wand-magic-sparkles"></i> Features</a>
-                  <a href="#" className="d-block py-2"><i class="fas fa-heart-pulse"></i> About us</a>
+                  <a href="#" className="d-block py-2"><i className="far fa-credit-card"></i> Pricing</a>
+                  <a href="#" className="d-block py-2"><i className="fas fa-user-shield"></i> Security</a>
+                  <a href="#" className="d-block py-2"><i className="fas fa-wand-magic-sparkles"></i> Features</a>
+                  <a href="#" className="d-block py-2"><i className="fas fa-heart-pulse"></i> About us</a>
                   <div className="border-top my-2"></div>
                   <div className="droop" >
                     <p role="button" className="m-0 py-2" onMouseEnter={() => { setOpenHelp(true); setOpenLang(false) }}><i class="fas fa-angle-left"></i> Help</p>
                     {openHelp && (
                       <div className="help-content">
-                        <a href="#"><i class="far fa-circle-question"></i> FAQ</a>
-                        <a href="#"><i class="fas fa-book"></i> Tools</a>
-                        <a href="#"><i class="fas fa-scale-unbalanced"></i> Legal & Privacy</a>
-                        <a href="#"><i class="far fa-envelope"></i> Contact</a>
+                        <a href="#"><i className="far fa-circle-question"></i> FAQ</a>
+                        <a href="#"><i className="fas fa-book"></i> Tools</a>
+                        <a href="#"><i className="fas fa-scale-unbalanced"></i> Legal & Privacy</a>
+                        <a href="#"><i className="far fa-envelope"></i> Contact</a>
                       </div>
                     )}
                     <p role="button" className="m-0 py-2" onMouseEnter={() => { setOpenLang(true); setOpenHelp(false) }}><i class="fas fa-angle-left"></i> Language</p>

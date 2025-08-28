@@ -1,67 +1,104 @@
-import { useParams } from "react-router-dom";
-import { useState } from "react";
-import "./detail.css";
+import { useNavigate, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import Navbar from "../../components/navbar/navbar";
+import Resize from "../../cards/resize/resize";
+import ConvertToJpg from "../../cards/convertToJpg/convertToJpg";
+import ConvertFromJpg from "../../cards/convertFromJpg/convertFromJpg";
+import BlurFace from "../../cards/blurFace/blurFace";
+import Compress from "../../cards/compress/compress";
+import UpscaleImage from "../../cards/upscale/upscale";
+import ContainerPhotoEditor from "../../cards/editor/editor";
+import RemoveBackground from "../../cards/removeBg/removeBg";
+import CropImage from "../../cards/crop/crop";
+import WatermarkImage from "../../cards/watermark/watermark";
+import MemeGenerator from "../../cards/meme/meme";
+import RotateImage from "../../cards/rotate/rotate";
+import HtmlToImage from "../../cards/htmltoImg/htmltoImg";
 
 function Detail() {
-  const { toolname } = useParams();
-  const [files, setFiles] = useState([]);
+  const { toolPath } = useParams();
+  const tools = useSelector((state) => state.tools.tools);
+  const navigate = useNavigate();
 
-  // Fayl tanlash
-  const handleFileChange = (e) => {
-    setFiles([...e.target.files]);
-  };
+  const tool = tools.find((t) => t.path.slice(1) === toolPath);
 
-  // Drag & Drop
-  const handleDrop = (e) => {
-    e.preventDefault();
-    setFiles([...e.dataTransfer.files]);
-  };
+  if (!tool) {
+    return (
+      <>
+        <Navbar />
+        <h2 className="text-center p-5">Tool not found ❌</h2>
+        <div
+          onClick={() => navigate("/")}
+          className="btn btn-outline-primary d-block mx-auto"
+        >
+          Back
+        </div>
+      </>
+    );
+  }
 
-  const handleDragOver = (e) => {
-    e.preventDefault();
-  };
+  let PageComponent;
+
+  switch (tool.path) {
+    case "/compress-image":
+      PageComponent = <Compress />;
+      break;
+    case "/resize-image":
+      PageComponent = <Resize/>;
+      break;
+    case "/crop-image":
+      PageComponent = <CropImage />;
+      break;
+    case "/convert-to-jpg":
+      PageComponent = <ConvertToJpg />;
+      break;
+    case "/convert-from-jpg":
+      PageComponent = <ConvertFromJpg />;
+      break;
+    case "/photo-editor":
+      PageComponent = <ContainerPhotoEditor />;
+      break;
+    case "/upscale-image":
+      PageComponent = <UpscaleImage />;
+      break;
+    case "/remove-background":
+      PageComponent = <RemoveBackground/>;
+      break;
+    case "/watermark-image":
+      PageComponent = <WatermarkImage />;
+      break;
+    case "/meme-generator":
+      PageComponent = <MemeGenerator />;
+      break;
+    case "/rotate-image":
+      PageComponent = <RotateImage />;
+      break;
+    case "/html-to-image":
+      PageComponent = <HtmlToImage />;
+      break;
+    case "/blur-face":
+      PageComponent = <BlurFace />;
+      break;
+    default:
+      PageComponent = (
+        <div>
+          <h2 className="text-center p-5">Tool not implemented ❌</h2>
+          <div
+            onClick={() => navigate("/")}
+            className="btn btn-outline-primary d-block mx-auto"
+          >
+            Back
+          </div>
+        </div>
+      );
+  }
 
   return (
-    <div className="detail-page">
-      <h1 className="tool-title">{toolname.toUpperCase()}</h1>
-      <p className="tool-subtitle">
-        Upload your images to start {toolname}.
-      </p>
-
-      {/* Upload area */}
-      <div
-        className="upload-box"
-        onDrop={handleDrop}
-        onDragOver={handleDragOver}
-      >
-        <p>📂 Drag & Drop your images here</p>
-        <span>or</span>
-        <label className="upload-btn">
-          Select Images
-          <input
-            type="file"
-            multiple
-            accept="image/*"
-            onChange={handleFileChange}
-            hidden
-          />
-        </label>
-      </div>
-
-      {/* Preview */}
-      {files.length > 0 && (
-        <div className="preview-grid">
-          {files.map((file, idx) => (
-            <div key={idx} className="preview-card">
-              <img src={URL.createObjectURL(file)} alt={file.name} />
-              <p>{file.name}</p>
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
+    <>
+      <Navbar />
+      {PageComponent}
+    </>
   );
 }
-
 
 export default Detail
