@@ -49,8 +49,8 @@ Reduce the filesize of your images at once.
 
       {/* Upload box */}
       <div
-        className="border border-2 border-secondary rounded-3 p-5 mb-4 bg-light"
-        style={{ cursor: "pointer" }}
+        className="border border-dashed p-5 mb-3 text-center"
+        style={{ cursor: "pointer", borderRadius: "8px", backgroundColor: "#f8f9fa" }}
         onClick={() => document.getElementById("fileInput").click()}
       >
         <i className="bi bi-cloud-arrow-up display-3 text-primary"></i>

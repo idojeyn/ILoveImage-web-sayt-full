@@ -1,4 +1,4 @@
-import  { useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { saveAs } from "file-saver";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -50,16 +50,18 @@ const ConvertToJpg = () => {
   };
 
   return (
-    <div className="container text-center py-5" style={{minHeight:'91vh'}}>
+    <div className="container text-center py-5" style={{ minHeight: '91vh' }}>
       <h2 className="mb-4 fw-bold">Convert to JPG</h2>
+      <h5 className="text-muted m-4 ">
+        Transform PNG, GIF, TIF, PSD, SVG, WEBP, HEIC or RAW to JPG format.
+        Convert many images to JPG online at once.
+      </h5>
 
       {/* Dropzone */}
       <div
         {...getRootProps()}
-        className={`border rounded p-5 mb-3 ${
-          isDragActive ? "bg-light border-primary" : "bg-white"
-        }`}
-        style={{ cursor: "pointer" }}
+        className="border border-dashed p-5 mb-3 text-center"
+        style={{ cursor: "pointer", borderRadius: "8px", backgroundColor: "#f8f9fa" }}
       >
         <input {...getInputProps()} />
         {isDragActive ? (

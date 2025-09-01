@@ -50,8 +50,11 @@ export default function RemoveBackground() {
   };
 
   return (
-    <div className="container text-center py-5" style={{minHeight:'91vh'}}>
+    <div className="container text-center py-5" style={{ minHeight: '91vh' }}>
       <h2 className="mb-3">Remove Background</h2>
+      <h5 className="text-muted m-4 ">
+        Cut out image background. Remove the background of your JPG and PNG images with exceptional quality.
+      </h5>
 
       <div
         {...getRootProps()}
@@ -65,7 +68,7 @@ export default function RemoveBackground() {
       {preview && (
         <div className="text-center mb-3">
           <p>Original Image:</p>
-          <img src={preview} alt="Preview" style={{ maxWidth: "100%", maxHeight: "300px", borderRadius:"8px" }} />
+          <img src={preview} alt="Preview" style={{ maxWidth: "100%", maxHeight: "300px", borderRadius: "8px" }} />
         </div>
       )}
 
@@ -89,7 +92,7 @@ export default function RemoveBackground() {
       {processedPreview && (
         <div className="text-center mb-3">
           <p>Processed Image:</p>
-          <img src={processedPreview} alt="Processed" style={{ maxWidth: "100%", maxHeight: "300px", borderRadius:"8px" }} />
+          <img src={processedPreview} alt="Processed" style={{ maxWidth: "100%", maxHeight: "300px", borderRadius: "8px" }} />
           <div className="mt-2">
             <button
               className="btn btn-success"

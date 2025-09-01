@@ -70,8 +70,11 @@ export default function BlurFace() {
   };
 
   return (
-    <div className="container py-5">
+    <div className="container text-center py-5" style={{minHeight:'91vh'}}>
       <h2 className="mb-4 text-center">Blur Face</h2>
+      <h5 className="text-muted m-4 ">
+        Easily anonymize faces in images with a blur effect. Automatically blur multiple faces in a single shot or blur specific sections of your image.
+      </h5>
 
       {/* Drag & Drop */}
       <div

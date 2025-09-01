@@ -60,9 +60,10 @@ export default function RotateImage() {
   const rotateRight = () => setAngle((prev) => prev + 90);
 
   return (
-    <div className="container text-center py-5" style={{minHeight:'91vh'}}>
+    <div className="container text-center py-5" style={{ minHeight: '91vh' }}>
       <h2 className="mb-3">Rotate Image</h2>
-      <h5>Mouse over IMAGE file below and a icon will appear, click on it to rotate your IMAGEs.</h5>
+      <h5>Rotate JPG, PNG or GIF.
+        Rotate only images with portrait or landscape orientation at once.</h5>
       {/* Drag & Drop */}
       <div
         {...getRootProps()}

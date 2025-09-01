@@ -37,3 +37,6 @@ a {
 .container{
   width: 90% !important;
 }
+body, html {
+  background-color: #fff !important;
+}

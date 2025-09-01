@@ -186,16 +186,20 @@ export default function ContainerPhotoEditor() {
   };
 
   return (
-    <div className="container py-5" style={{ minHeight: '91vh' }}>
-      <h2 className="text-center">Photo Editor</h2>
-      <div {...getRootProps()} className="border rounded border-dashed p-4 mb-3 text-center" style={{ width: "80%", cursor: "pointer", margin: '0 auto',background:'#f0f0f0' }}>
+    <div className="container text-center py-5" style={{ minHeight: '91vh' }}>
+      <h2 className="mb-3">Photo Editor</h2>
+      <h5 className="text-muted m-4 ">
+        Add text, stickers, effects and filters to your photos. Edit your photos online.
+      </h5>
+      <div {...getRootProps()} className="border border-dashed p-5 mb-3 text-center"
+        style={{ cursor: "pointer", borderRadius: "8px", backgroundColor: "#f8f9fa" }}>
         <input {...getInputProps()} />
         {file ? <p>{file.name}</p> : <p>Drag & drop an image or click to select</p>}
       </div>
 
       {imgObj && (
         <>
-          <div ref={containerRef} className=" canvas-container " style={{ width: "50%", height: "60vh", border: "1px solid #ccc", overflow: "hidden", position: "relative", margin: "10px auto", float: 'right' }}>
+          <div ref={containerRef} className=" canvas-container " style={{ width: "50%", height: "50vh", border: "1px solid #ccc", overflow: "hidden", position: "relative", margin: "10px auto", float: 'right' }}>
             <canvas
               ref={canvasRef}
               style={{ position: "absolute", top: 0, left: 0, cursor: drawMode ? "crosshair" : "grab" }}
@@ -206,7 +210,7 @@ export default function ContainerPhotoEditor() {
             />
           </div>
 
-          <div className="left" style={{width:'50%',float:'left',height:'50vh'}}>
+          <div className="left" style={{ width: '50%', float: 'left', height: '50vh' }}>
             {/* Controls */}
             <div className="mb-2">
               <button className="btn btn-secondary me-1" onClick={() => { saveState(); setRotation(r => r - 90) }}>Rotate Left</button>
@@ -233,7 +237,7 @@ export default function ContainerPhotoEditor() {
             <div className="mb-2">
               <button className={`btn me-1 ${drawMode ? "btn-success" : "btn-secondary"}`} onClick={() => setDrawMode(!drawMode)}>Draw</button>
               <button className="btn btn-secondary me-1" onClick={() => setAddingText(true)}>Add Text</button>
-              {addingText && <input type="text" style={{background:'#fff', outline:'none',color:'#000'}} value={textInput} onChange={e => setTextInput(e.target.value)} />}
+              {addingText && <input type="text" style={{ background: '#fff', outline: 'none', color: '#000' }} value={textInput} onChange={e => setTextInput(e.target.value)} />}
             </div>
 
             {/* Download */}

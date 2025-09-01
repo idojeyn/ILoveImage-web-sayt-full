@@ -85,14 +85,18 @@ const CropImage = () => {
   };
 
   return (
-    <div className="container text-center py-5" style={{minHeight:'91vh'}}>
-      <h3 className="mb-4 text-center">✂️ Image Crop Tool</h3>
+    <div className="container text-center py-5" style={{ minHeight: '91vh' }}>
+      <h3 className="mb-4 text-center">Crop IMAGE</h3>
+      <h5 className="text-muted m-4 ">
+        Crop JPG, PNG or GIF by defining a rectangle in pixels.
+        Cut your image online.
+      </h5>
 
       {!imageSrc ? (
         <div
           {...getRootProps()}
-          className="border border-2 border-secondary p-5 text-center rounded bg-light"
-          style={{ cursor: "pointer" }}
+          className="border border-dashed p-5 mb-3 text-center"
+        style={{ cursor: "pointer", borderRadius: "8px", backgroundColor: "#f8f9fa" }}
         >
           <input {...getInputProps()} />
           <p className="mb-0">Drag & drop your image here, or click to select</p>

@@ -57,6 +57,9 @@ export default function HtmlToImage() {
   return (
     <div className="container text-center py-5" style={{minHeight:'91vh'}}>
       <h2 className="mb-3">HTML to Image </h2>
+      <h5 className="text-muted m-4 ">
+        Convert web pages to JPG or SVG and maintain the visual aspect.
+      </h5>
 
       {/* URL Input */}
       <div className="mb-3 row g-2">

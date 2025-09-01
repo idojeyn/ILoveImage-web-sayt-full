@@ -49,75 +49,75 @@ const Resize = () => {
   };
 
   return (
-    <div className="container text-center py-5" style={{minHeight:'91vh'}}>
-      <div className=" ">
-        <div className="text-center">
-          <h3 className="mb-4 fw-bold">Resize Image</h3>
+    <div className="container text-center py-5" style={{ minHeight: '91vh' }}>
+      <h3 className="mb-4 fw-bold">Resize Image</h3>
+      <h5 className="text-muted m-4 ">
+        Resize JPG, PNG, SVG or GIF by defining new height and width pixels.
+        Change image dimensions in bulk.
+      </h5>
 
-          {/* Upload */}
-          <div className="mb-3">
-            <input
-              type="file"
-              accept="image/*"
-              className="form-control"
-              onChange={handleImageUpload}
-            />
-          </div>
+      {/* Upload */}
+      <div className="mb-3">
+        <input
+          type="file"
+          accept="image/*"
+          className="form-control"
+          onChange={handleImageUpload}
+        />
+      </div>
 
-          {/* Width & Height input */}
-          <div className="row g-2 mb-3">
-            <div className="col">
-              <input
-                type="number"
-                className="form-control"
-                placeholder="Width"
-                value={width}
-                onChange={(e) => setWidth(e.target.value)}
-              />
-            </div>
-            <div className="col">
-              <input
-                type="number"
-                className="form-control"
-                placeholder="Height"
-                value={height}
-                onChange={(e) => setHeight(e.target.value)}
-              />
-            </div>
-          </div>
-
-          {/* Buttons */}
-          <div className="d-flex justify-content-center gap-3">
-            <button
-              className="btn btn-primary px-4"
-              onClick={handleResize}
-              disabled={!image}
-            >
-              Resize
-            </button>
-            <button
-              className="btn btn-success px-4"
-              onClick={handleDownload}
-              disabled={!preview}
-            >
-              Download
-            </button>
-          </div>
-
-          {/* Preview */}
-          {preview && (
-            <div className="mt-4">
-              <h5 className="mb-3">Preview</h5>
-              <img
-                src={preview}
-                alt="preview"
-                className="img-fluid rounded shadow"
-                style={{ maxHeight: "400px" }}
-              />
-            </div>
-          )}
+      {/* Width & Height input */}
+      <div className="row g-2 mb-3">
+        <div className="col">
+          <input
+            type="number"
+            className="form-control"
+            placeholder="Width"
+            value={width}
+            onChange={(e) => setWidth(e.target.value)}
+          />
+        </div>
+        <div className="col">
+          <input
+            type="number"
+            className="form-control"
+            placeholder="Height"
+            value={height}
+            onChange={(e) => setHeight(e.target.value)}
+          />
         </div>
       </div>
+
+      {/* Buttons */}
+      <div className="d-flex justify-content-center gap-3">
+        <button
+          className="btn btn-primary px-4"
+          onClick={handleResize}
+          disabled={!image}
+        >
+          Resize
+        </button>
+        <button
+          className="btn btn-success px-4"
+          onClick={handleDownload}
+          disabled={!preview}
+        >
+          Download
+        </button>
+      </div>
+
+      {/* Preview */}
+      {preview && (
+        <div className="mt-4">
+          <h5 className="mb-3">Preview</h5>
+          <img
+            src={preview}
+            alt="preview"
+            className="img-fluid rounded shadow"
+            style={{ maxHeight: "400px" }}
+          />
+        </div>
+      )}
     </div>
   );
 };

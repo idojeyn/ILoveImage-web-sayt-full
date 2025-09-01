@@ -60,8 +60,12 @@ export default function MemeGenerator() {
   };
 
   return (
-    <div className="container text-center py-5" style={{minHeight:'91vh'}}>
+    <div className="container text-center py-5" style={{ minHeight: '91vh' }}>
       <h2 className="mb-3">Meme Generator</h2>
+      <h5 className="text-muted m-4 ">
+        Create a meme from JPG, GIF or PNG images.
+        Edit your image and make a meme.
+      </h5>
 
       {/* Drag & Drop */}
       <div

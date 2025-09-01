@@ -50,11 +50,15 @@ export default function UpscaleImage() {
   };
 
   return (
-    <div className="container text-center py-5" style={{minHeight:'91vh'}}>
+    <div className="container text-center py-5" style={{ minHeight: '91vh' }}>
       <h2>Upscale Image</h2>
+      <h5 className="text-muted m-4 " style={{width:'50%'}}>
+        Easily increase the resolution of your images with our advanced upscaling tool.
+      </h5>
 
       {/* Drag & Drop */}
-      <div {...getRootProps()} className="border border-dashed p-4 mb-3 text-center" style={{ cursor: "pointer", borderRadius:"8px", backgroundColor:"#f9f9f9" }}>
+      <div {...getRootProps()} className="border border-dashed p-5 mb-3 text-center"
+        style={{ cursor: "pointer", borderRadius: "8px", backgroundColor: "#f8f9fa" }}>
         <input {...getInputProps()} />
         {!file && <p>Drag & drop an image here, or click to select</p>}
         {file && <p>{file.name}</p>}
@@ -63,7 +67,7 @@ export default function UpscaleImage() {
       {/* Preview */}
       {preview && (
         <div className="text-center mb-3">
-          <img src={preview} alt="Preview" style={{ maxWidth: "100%", maxHeight: "300px", borderRadius:"8px", boxShadow:"0 2px 8px rgba(0,0,0,0.2)" }} />
+          <img src={preview} alt="Preview" style={{ maxWidth: "100%", maxHeight: "300px", borderRadius: "8px", boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }} />
         </div>
       )}
 
@@ -71,7 +75,7 @@ export default function UpscaleImage() {
       {file && (
         <div className="mb-2">
           <label>Scale (px multiplier): {scale}x</label>
-          <input type="range" min={1} max={5} step={0.1} value={scale} onChange={e=>setScale(Number(e.target.value))} className="form-range" />
+          <input type="range" min={1} max={5} step={0.1} value={scale} onChange={e => setScale(Number(e.target.value))} className="form-range" />
         </div>
       )}
 
