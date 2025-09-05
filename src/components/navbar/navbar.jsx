@@ -52,13 +52,13 @@ const Navbar = () => {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top shadow-sm px-3">
-      <a className="navbar-brand me-5" href="#">
+      <Link className="navbar-brand me-5" to="/">
         <img
           src="https://latestlogo.com/wp-content/uploads/2024/01/ilove-img-logo.svg"
           alt="logo"
           width="150"
         />
-      </a>
+      </Link>
 
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         {mainTools.map((tool) => (

@@ -35,3 +35,24 @@
   border-radius: 5px;
 }
 
+.footer-link {
+  color: #ddd;
+  text-decoration: none;
+}
+.footer-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.languageContent ul li {
+  padding: 4px 0;
+  cursor: pointer;
+  color: #ddd;
+}
+.languageContent ul li:hover {
+  color: #212529;
+}
+
+.list-unstyled ul li a{
+  color: #ddd;
+}

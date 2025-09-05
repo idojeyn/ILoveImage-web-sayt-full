@@ -1,28 +1,30 @@
-.nav-link{
+.nav-link {
   color: #000;
 }
 
 
-.help-content, 
+.help-content,
 .language-content {
   position: absolute;
   top: 0;
   right: 218.5px;
   background: #fff;
   border-radius: 0.5rem;
-  box-shadow: -8px 2px 12px rgba(0,0,0,0.15);
+  box-shadow: -8px 2px 12px rgba(0, 0, 0, 0.15);
   z-index: 999;
   padding: 10px;
   height: 100%;
 }
-.language-content{
+
+.language-content {
   width: 500px;
 }
 
-.help-content i{
+.help-content i {
   color: #595C5F;
 }
-.help-content a, 
+
+.help-content a,
 .language-content li {
   display: block;
   padding: 6px 12px;
@@ -31,10 +33,15 @@
   font-size: 14px;
 }
 
+.right a,
+.right a i {
+  color: #24282C;
+}
+
 .help-content a:hover,
 .right a:hover,
 .right p:hover,
-.left .d-flex:hover, 
+.left .d-flex:hover,
 .language-content li:hover {
   background: #f5f5f5;
   border-radius: 5px;
@@ -53,6 +60,7 @@
   filter: blur(1.5px);
   transition: 0.3s ease;
 }
+
 .integration {
   border: 1px solid #ddd;
   width: 80%;
@@ -66,16 +74,17 @@
 
 .hover-dropdown:hover .dropdown-menu {
   display: block;
-  margin-top: 0; 
+  margin-top: 0;
   right: 0;
-  left: auto; 
+  left: auto;
 }
-.dropdown-menu-end .col{
-  padding: 0 ;
+
+.dropdown-menu-end .col {
+  padding: 0;
 }
 
 .yellow i {
-  color: #FFD400 ;
+  color: #FFD400;
 }
 
 .green i {
