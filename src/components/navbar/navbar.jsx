@@ -398,7 +398,7 @@ const Navbar = () => {
           {openLang && (
             <div className="ps-3"
             style={{
-              maxHeight: "200px",
+              maxHeight: "350px",
               overflowY: "auto",
               paddingRight: "8px",
             }}>
