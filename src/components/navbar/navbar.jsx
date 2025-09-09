@@ -62,12 +62,12 @@ const Navbar = () => {
       // Sidebar yopilganda — scrollni qaytarish
       document.body.style.overflow = "auto";
     }
-  
+
     // Tozalash — komponent o‘chirilganda
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, [openTools, openUser]); 
+  }, [openTools, openUser]);
 
   // Tashqaridan bosilganda menyuni yopish
   useEffect(() => {
@@ -96,7 +96,7 @@ const Navbar = () => {
           }}
           aria-label="More Tools"
         >
-          <i className="fas fa-toolbox fa-lg"></i>
+          <i className="fas fa-list fa-lg"></i>
         </button>
       </div>
 
@@ -281,9 +281,8 @@ const Navbar = () => {
 
       {/* 📱 MOBIL — CHAPDAN OCHILUVCHI MENYU */}
       <div
-        className={`tools-menu position-fixed top-0 start-0 h-100 bg-white shadow-lg transition-transform ${
-          openTools ? "translateX-0" : "-translateX-full"
-        }`}
+        className={`tools-menu position-fixed top-0 start-0 h-100 bg-white shadow-lg transition-transform ${openTools ? "translateX-0" : "-translateX-full"
+          }`}
         style={{ zIndex: 1050, width: "85%", maxWidth: "320px" }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -294,11 +293,11 @@ const Navbar = () => {
           >
             <i className="fas fa-arrow-left"></i>
           </button>
-          <h6 className="m-0">MORE TOOLS</h6>
+          <h6 className="m-0">TOOLS</h6>
         </div>
         <div className="p-3">
           {categories.map((category) => (
-            <div key={category} className="mb-3">
+            <div key={category} className={`mb-3 ${categoryColors[category]}`}>
               <h6 className="text-primary">{category.toUpperCase()}</h6>
               {tools
                 .filter((t) => t.category === category)
@@ -321,9 +320,8 @@ const Navbar = () => {
 
       {/* 📱 MOBIL — O‘NGDAN OCHILUVCHI MENYU */}
       <div
-        className={`user-menu position-fixed top-0 end-0 h-100 bg-white shadow-lg transition-transform ${
-          openUser ? "translateX-0" : "translateX-full"
-        }`}
+        className={`user-menu position-fixed top-0 end-0 h-100 bg-white shadow-lg transition-transform ${openUser ? "translateX-0" : "translateX-full"
+          }`}
         style={{ zIndex: 1050, width: "85%", maxWidth: "320px" }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -337,6 +335,54 @@ const Navbar = () => {
           </button>
         </div>
         <div className="p-3">
+          <a href="#" className="d-block py-2"><i className="far fa-credit-card"></i> Pricing</a>
+          <a href="#" className="d-block py-2"><i className="fas fa-user-shield"></i> Security</a>
+          <a href="#" className="d-block py-2"><i className="fas fa-wand-magic-sparkles"></i> Features</a>
+          <a href="#" className="d-block py-2"><i className="fas fa-heart-pulse"></i> About us</a>
+          <div className="border-top my-3"></div>
+          <button
+            className="btn btn-link text-start w-100"
+            onClick={() => setOpenHelp(!openHelp)}
+          >
+            <i className={`fas fa-angle-${openHelp ? "down" : "right"} me-2`}></i> Help
+          </button>
+          {openHelp && (
+            <div className="ps-3">
+              <a href="#" className="d-block py-1"><i className="far fa-circle-question"></i> FAQ</a>
+              <a href="#" className="d-block py-1"><i className="fas fa-book"></i> Tools</a>
+              <a href="#" className="d-block py-1"><i className="fas fa-scale-unbalanced"></i> Legal & Privacy</a>
+              <a href="#" className="d-block py-1"><i className="far fa-envelope"></i> Contact</a>
+            </div>
+          )}
+          <button
+            className="btn btn-link text-start w-100"
+            onClick={() => setOpenLang(!openLang)}
+          >
+            <i className={`fas fa-angle-${openLang ? "down" : "right"} me-2`}></i> Language
+          </button>
+          {openLang && (
+            <div className="ps-3"
+              style={{
+                maxHeight: "250px",
+                overflowY: "auto",
+                paddingRight: "8px",
+              }}>
+              <ul className="list-unstyled">
+                {[
+                  "English", "Español", "Français", "Deutsch", "Italiano",
+                  "Português", "日本語", "Pусский", "한국어", "中文 (简体)",
+                  "中文 (繁體)", "العربية", "Български", "Català", "Nederlands",
+                  "Ελληνικά", "हिन्दी", "Bahasa Indonesia", "Bahasa Melayu", "Polski",
+                  "Svenska", "ภาษาไทย", "Türkçe", "Українська", "Tiếng Việt"
+                ].map((lang) => (
+                  <li key={lang}>
+                    <a href="#" className="d-block py-1">{lang}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          <div className="border-top my-3"></div>
           {!isAuth ? (
             <>
               <Link to="/login" className="d-block py-2" onClick={() => setOpenUser(false)}>Login</Link>
@@ -368,54 +414,6 @@ const Navbar = () => {
                 Logout
               </button>
             </>
-          )}
-          <div className="border-top my-3"></div>
-          <a href="#" className="d-block py-2"><i className="far fa-credit-card"></i> Pricing</a>
-          <a href="#" className="d-block py-2"><i className="fas fa-user-shield"></i> Security</a>
-          <a href="#" className="d-block py-2"><i className="fas fa-wand-magic-sparkles"></i> Features</a>
-          <a href="#" className="d-block py-2"><i className="fas fa-heart-pulse"></i> About us</a>
-          <div className="border-top my-3"></div>
-          <button
-            className="btn btn-link text-start w-100"
-            onClick={() => setOpenHelp(!openHelp)}
-          >
-            <i className={`fas fa-angle-${openHelp ? "down" : "right"} me-2`}></i> Help
-          </button>
-          {openHelp && (
-            <div className="ps-3">
-              <a href="#" className="d-block py-1"><i className="far fa-circle-question"></i> FAQ</a>
-              <a href="#" className="d-block py-1"><i className="fas fa-book"></i> Tools</a>
-              <a href="#" className="d-block py-1"><i className="fas fa-scale-unbalanced"></i> Legal & Privacy</a>
-              <a href="#" className="d-block py-1"><i className="far fa-envelope"></i> Contact</a>
-            </div>
-          )}
-          <button
-            className="btn btn-link text-start w-100"
-            onClick={() => setOpenLang(!openLang)}
-          >
-            <i className={`fas fa-angle-${openLang ? "down" : "right"} me-2`}></i> Language
-          </button>
-          {openLang && (
-            <div className="ps-3"
-            style={{
-              maxHeight: "350px",
-              overflowY: "auto",
-              paddingRight: "8px",
-            }}>
-              <ul className="list-unstyled">
-                {[
-                  "English", "Español", "Français", "Deutsch", "Italiano",
-                  "Português", "日本語", "Pусский", "한국어", "中文 (简体)",
-                  "中文 (繁體)", "العربية", "Български", "Català", "Nederlands",
-                  "Ελληνικά", "हिन्दी", "Bahasa Indonesia", "Bahasa Melayu", "Polski",
-                  "Svenska", "ภาษาไทย", "Türkçe", "Українська", "Tiếng Việt"
-                ].map((lang) => (
-                  <li key={lang}>
-                    <a href="#" className="d-block py-1">{lang}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
           )}
         </div>
       </div>
