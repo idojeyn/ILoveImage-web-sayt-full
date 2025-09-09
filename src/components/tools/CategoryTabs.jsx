@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setCategory } from "../../store/toolsSlice";
+import "./categoryTabs.css"
 
 export default function CategoryTabs() {
   const dispatch = useDispatch();
@@ -12,9 +13,8 @@ export default function CategoryTabs() {
       {categories.map((cat) => (
         <button
           key={cat}
-          className={`btn rounded-5 ${
-            activeCategory === cat ? "btn-dark" : "btn-outline-dark"
-          }`}
+          className={`btn rounded-5 ${activeCategory === cat ? "btn-dark" : "btn-outline-dark"
+            }`}
           onClick={() => dispatch(setCategory(cat))}
         >
           {cat}

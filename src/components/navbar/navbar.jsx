@@ -54,6 +54,21 @@ const Navbar = () => {
     }
   }, [isAuth]);
 
+  useEffect(() => {
+    if (openTools || openUser) {
+      // Sidebar ochilganda — scrollni bloklash
+      document.body.style.overflow = "hidden";
+    } else {
+      // Sidebar yopilganda — scrollni qaytarish
+      document.body.style.overflow = "auto";
+    }
+  
+    // Tozalash — komponent o‘chirilganda
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [openTools, openUser]); 
+
   // Tashqaridan bosilganda menyuni yopish
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -381,7 +396,12 @@ const Navbar = () => {
             <i className={`fas fa-angle-${openLang ? "down" : "right"} me-2`}></i> Language
           </button>
           {openLang && (
-            <div className="ps-3">
+            <div className="ps-3"
+            style={{
+              maxHeight: "200px",
+              overflowY: "auto",
+              paddingRight: "8px",
+            }}>
               <ul className="list-unstyled">
                 {[
                   "English", "Español", "Français", "Deutsch", "Italiano",
