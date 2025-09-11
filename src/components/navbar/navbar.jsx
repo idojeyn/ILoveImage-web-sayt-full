@@ -8,13 +8,14 @@ import { useSelector } from "react-redux";
 // Kategoriyalar ranglari
 const categoryColors = {
   Optimize: "green",
-  Create: "feolet",
+  Create: "violet",
   Edit: "blue",
   Convert: "yellow",
   Security: "dark",
 };
 
 const Navbar = () => {
+  const [openMore, setOpenMore] = useState(false);
   const [openTools, setOpenTools] = useState(false); // chap menyu
   const [openUser, setOpenUser] = useState(false);   // o‘ng menyu
   const [openHelp, setOpenHelp] = useState(false);
@@ -200,15 +201,19 @@ const Navbar = () => {
           <div className="position-relative">
             <i
               className="fas fa-list fa-2x"
-              onMouseEnter={() => setOpenTools(true)}
-              onMouseLeave={() => setOpenTools(false)}
+              onMouseEnter={() => setOpenMore(true)}
+              onMouseLeave={() => setOpenMore(false)}
               role="button"
             ></i>
-            {openTools && (
+            {openMore && (
               <div className="position-absolute end-0 mt-1 dropdown p-3 bg-white shadow rounded" style={{ width: "650px" }}>
                 <div className="row left">
                   <div className={`col-8 ${openHelp || openLang ? "blurred" : ""}`}>
                     <h6 className="text-muted">OTHER PRODUCTS</h6>
+                    <div className="d-flex align-items-center p-2 rounded hover-bg">
+                      <img src="https://play-lh.googleusercontent.com/ORe-eRjZn-TA4nWnM8Sb7B-ykQQhDfoNhbpzPSOSNOFnhI2H6i071eBI2myRFJl5AV0" width="32" className="me-2" />
+                      <div><strong>iLovePDF</strong><br /><small>Simplify document management</small></div>
+                    </div>
                     <div className="d-flex align-items-center p-2 rounded hover-bg">
                       <img src="https://play-lh.googleusercontent.com/ORe-eRjZn-TA4nWnM8Sb7B-ykQQhDfoNhbpzPSOSNOFnhI2H6i071eBI2myRFJl5AV0" width="32" className="me-2" />
                       <div><strong>iLovePDF</strong><br /><small>Simplify document management</small></div>
@@ -286,7 +291,7 @@ const Navbar = () => {
         style={{ zIndex: 1050, width: "85%", maxWidth: "320px" }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="p-3 border-bottom d-flex align-items-center">
+        <div className="py-1 px-3 border-bottom d-flex align-items-center">
           <button
             className="btn btn-link text-dark me-auto"
             onClick={() => setOpenTools(false)}
@@ -325,7 +330,7 @@ const Navbar = () => {
         style={{ zIndex: 1050, width: "85%", maxWidth: "320px" }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="p-3 border-bottom d-flex align-items-center">
+        <div className="py-1 px-3 border-bottom d-flex align-items-center">
           <h6 className="m-0 me-auto">MENU</h6>
           <button
             className="btn btn-link text-dark"
