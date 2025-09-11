@@ -173,7 +173,7 @@ const Navbar = () => {
         </ul>
 
         {/* Desktop o‘ng tomon — Login / Profil / Logout */}
-        <div className="d-flex align-items-center">
+        <div className="d-flex align-items-center" onMouseLeave={() => setOpenMore(false)}>
           {!isAuth ? (
             <>
               <Link to="/login" className="btn btn-link text-dark me-2">Login</Link>
@@ -202,7 +202,6 @@ const Navbar = () => {
             <i
               className="fas fa-list fa-2x"
               onMouseEnter={() => setOpenMore(true)}
-              onMouseLeave={() => setOpenMore(false)}
               role="button"
             ></i>
             {openMore && (
